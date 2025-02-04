@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./item-list"; // Ensure the correct case-sensitive file name
+import ItemList from "./item-list";
 
 export default function Page() {
   return (
