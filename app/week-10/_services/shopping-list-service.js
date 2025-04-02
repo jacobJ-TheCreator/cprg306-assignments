@@ -1,19 +1,17 @@
 import { db } from "../_utils/firebase";
 import { collection, getDocs, addDoc, query } from "firebase/firestore";
 
-export async function getItems(userId) {
+export const getItems = async (userId) => {
     const items = [];
-    const itemsRef = collection(db, "users", userId, "items");
-    const q = query(itemsRef);
+    const q = query(collection(db, "users", userId, "items"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         items.push({ id: doc.id, ...doc.data() });
     });
     return items;
-}
+};
 
-export async function addItem(userId, item) {
-    const itemsRef = collection(db, "users", userId, "items");
-    const docRef = await addDoc(itemsRef, item);
+export const addItem = async (userId, item) => {
+    const docRef = await addDoc(collection(db, "users", userId, "items"), item);
     return docRef.id;
-}
+};

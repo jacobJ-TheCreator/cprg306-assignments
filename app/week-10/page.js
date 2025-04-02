@@ -23,7 +23,7 @@ export default function Page() {
                     <h1 className="text-4xl font-bold text-purple-700 mb-4">Welcome, {user.displayName}!</h1>
                     <p className="mb-6 text-lg text-pink-600">({user.email})</p>
                     <Link
-                        href="/week-10/shopping-list"
+                        href="/week-10"
                         className="text-blue-500 underline text-lg hover:text-blue-700 mb-4"
                     >
                         Go to your Shopping List
